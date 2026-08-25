@@ -151,7 +151,7 @@ export const projects: Project[] = [
     category: "Singh in USA",
     stats: "1.1M subscribers · 276.5M total views · channel since 2013",
     externalUrl: "https://www.youtube.com/c/SinghinUSA",
-    externalLabel: "Visit the channel on YouTube",
+    externalLabel: "View channel on YouTube",
   },
   {
     id: "julia-turc",
@@ -159,21 +159,21 @@ export const projects: Project[] = [
     category: "Julia Turc",
     stats: "39K subscribers · 19 videos",
     externalUrl: "https://www.youtube.com/@juliaturc1",
-    externalLabel: "Visit the channel on YouTube",
+    externalLabel: "View channel on YouTube",
   },
   {
     id: "software-with-nick",
     title: "Creative Lead",
     category: "Software with Nick",
     externalUrl: "https://www.youtube.com/@softwarewithnick",
-    externalLabel: "Visit the channel on YouTube",
+    externalLabel: "View channel on YouTube",
   },
   {
     id: "japan-dev",
     title: "YouTube Channel Manager",
     category: "Japan Dev",
     externalUrl: "https://www.youtube.com/@japan-dev",
-    externalLabel: "Visit the channel on YouTube",
+    externalLabel: "View channel on YouTube",
   },
   {
     id: "indogerman-express",

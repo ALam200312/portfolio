@@ -102,20 +102,21 @@ export default function VideoPanel({ project, onBack, onEnded }: Props) {
               />
             </div>
           ) : (
-            <div className="flex aspect-video w-full flex-col items-center justify-center gap-3 rounded-sm border border-border bg-panel text-center">
-              <p className="text-muted">
-                No video embedded for this entry yet.
-              </p>
+            <div className="relative flex aspect-video w-full flex-col items-center justify-center rounded-sm border border-border bg-panel text-center">
               {project.externalUrl && (
                 <a
                   href={project.externalUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-accent"
+                  className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
                 >
-                  {project.externalLabel ?? "Visit link"} ↗
+                  {project.externalLabel ?? "Visit link"}
+                  <span aria-hidden="true">↗</span>
                 </a>
               )}
+              <p className="text-muted">
+                No video embedded for this entry yet.
+              </p>
             </div>
           )}
 
