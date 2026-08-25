@@ -119,7 +119,7 @@ export default function VideoPanel({ project, onBack, onEnded }: Props) {
             </div>
           )}
 
-          <dl className="mt-4 grid grid-cols-[9rem_1fr] gap-y-1 text-muted">
+          <dl className="mt-4 grid grid-cols-[9rem_minmax(0,1fr)] gap-y-1 text-muted">
             <dt>Credit</dt>
             <dd className="text-foreground/90">
               Hanzla Alam{project.role ? `, ${project.role}` : ""}

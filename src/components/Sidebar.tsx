@@ -67,7 +67,7 @@ export default function Sidebar({
         Recognition
       </p>
 
-      <dl className="mt-3 grid grid-cols-[9rem_1fr] gap-y-2 text-muted">
+      <dl className="mt-3 grid grid-cols-[9rem_minmax(0,1fr)] gap-y-2 text-muted">
         <dt>Worked with</dt>
         <dd className="text-foreground/90">
           Harkirat Singh · 100xSchool · Superteam India · OnlyDevs
@@ -115,7 +115,7 @@ export default function Sidebar({
             <div
               key={category}
               id={`cat-${slugify(category)}`}
-              className="grid grid-cols-1 gap-x-6 gap-y-2 md:grid-cols-[9rem_1fr]"
+              className="grid grid-cols-1 gap-x-6 gap-y-2 md:grid-cols-[9rem_minmax(0,1fr)]"
             >
               <button
                 onClick={() => onSelect(items[0])}

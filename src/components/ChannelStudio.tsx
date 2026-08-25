@@ -43,7 +43,7 @@ export default function ChannelStudio({ projects, categories }: Props) {
   return (
     <div className="min-h-dvh w-full bg-background text-foreground md:flex">
       <aside
-        className={`w-full border-border md:w-1/2 md:shrink-0 md:border-r ${
+        className={`w-full min-w-0 border-border md:w-1/2 md:min-w-0 md:shrink-0 md:border-r-2 ${
           mobileView === "player" ? "hidden md:block" : "block"
         }`}
       >
