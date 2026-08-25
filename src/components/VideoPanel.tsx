@@ -40,7 +40,7 @@ export default function VideoPanel({ project, onBack, onEnded }: Props) {
   }, [onEnded]);
 
   return (
-    <div className="flex h-full flex-col text-lg">
+    <div className="flex h-full flex-col text-base md:text-lg">
       <div className="flex shrink-0 items-center border-b border-border px-6 py-3 md:px-10">
         {onBack ? (
           <button
@@ -50,7 +50,7 @@ export default function VideoPanel({ project, onBack, onEnded }: Props) {
             ← back
           </button>
         ) : (
-          <span className="text-base font-semibold uppercase tracking-[0.2em] text-muted">
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-muted md:text-base">
             Work
           </span>
         )}
@@ -59,19 +59,27 @@ export default function VideoPanel({ project, onBack, onEnded }: Props) {
       <div className="thin-scrollbar flex-1 overflow-y-auto">
         <div className="px-6 py-5 md:px-10">
           <div className="flex items-baseline justify-between gap-4">
-            <p className="text-base uppercase tracking-[0.1em] text-muted">
+            <p className="text-sm uppercase tracking-[0.1em] text-muted md:text-base">
               {project.category}
             </p>
             {(project.duration || project.views) && (
-              <p className="shrink-0 text-base text-muted">
-                {[project.duration, project.views]
-                  .filter(Boolean)
-                  .join(" · ")}
+              <p className="shrink-0 text-sm md:text-base">
+                {project.duration && (
+                  <span className="text-muted">{project.duration}</span>
+                )}
+                {project.duration && project.views && (
+                  <span className="text-muted"> · </span>
+                )}
+                {project.views && (
+                  <span className="font-medium text-money">
+                    {project.views}
+                  </span>
+                )}
               </p>
             )}
           </div>
 
-          <h2 className="mb-3 mt-1 text-3xl font-bold text-foreground">
+          <h2 className="mb-3 mt-1 text-2xl font-bold text-foreground md:text-3xl">
             {project.title}
           </h2>
 
@@ -114,7 +122,7 @@ export default function VideoPanel({ project, onBack, onEnded }: Props) {
           <dl className="mt-4 grid grid-cols-[9rem_1fr] gap-y-1 text-muted">
             <dt>Credit</dt>
             <dd className="text-foreground/90">
-              Hanzla Alam{project.role ? ` — ${project.role}` : ""}
+              Hanzla Alam{project.role ? `, ${project.role}` : ""}
             </dd>
             <dt>Category</dt>
             <dd className="text-foreground/90">{project.category}</dd>

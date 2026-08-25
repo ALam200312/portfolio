@@ -15,9 +15,10 @@ const config: Config = {
         muted: "#6b6b6b",
         foreground: "#111111",
         accent: "#1a56db",
+        money: "#0f7a3d",
       },
       fontFamily: {
-        mono: ["var(--font-jetbrains-mono)", "ui-monospace", "monospace"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
     },
   },

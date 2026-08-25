@@ -134,13 +134,14 @@ export const projects: Project[] = [
     year: "2026",
   },
   {
-    id: "100xschool-channel",
-    title: "Creative & Content Lead",
+    id: "100xschool-welcome",
+    title: "This Took 10 Years... Welcome to 100xSchool",
     category: "100xSchool",
+    youtubeId: "y-4CG-ptHq4",
     role: "Creative & Content Lead",
+    views: "82K views",
+    year: "2025",
     stats: "0 → 50K+ subscribers in 6 months",
-    externalUrl: "https://www.youtube.com/@100xSchoolYT",
-    externalLabel: "Visit the channel on YouTube",
     description:
       "Built the 100xSchool channel from scratch onsite in Noida after Harkirat launched the program.",
   },
@@ -182,7 +183,7 @@ export const projects: Project[] = [
     stats: "0 → 80K followers in 6 months",
     externalUrl: "https://www.instagram.com/indogermanexpress/?hl=en",
     externalLabel: "Visit the profile on Instagram",
-    description: "Ed-tech brand — creative direction across Instagram.",
+    description: "Ed-tech brand: creative direction across Instagram.",
   },
   {
     id: "motia",

@@ -34,14 +34,18 @@ export default function Sidebar({
   }, [query, projects]);
 
   return (
-    <div className="px-6 py-8 text-lg leading-7 md:px-10 md:py-10">
+    <div className="px-6 py-8 text-base leading-7 md:px-10 md:py-10 md:text-lg">
       <header className="text-center">
-        <p className="text-2xl font-bold tracking-[0.3em]">VIDEOS</p>
-        <p className="text-base text-muted">BY</p>
-        <p className="text-2xl font-bold tracking-[0.3em]">HANZALA</p>
+        <p className="text-xl font-bold tracking-[0.3em] md:text-2xl">
+          VIDEOS
+        </p>
+        <p className="text-sm text-muted md:text-base">BY</p>
+        <p className="text-xl font-bold tracking-[0.3em] md:text-2xl">
+          HANZALA
+        </p>
       </header>
 
-      <p className="mt-6 text-right text-base font-semibold uppercase tracking-[0.15em] text-muted">
+      <p className="mt-6 text-right text-sm font-semibold uppercase tracking-[0.15em] text-muted md:text-base">
         Roll camera:
       </p>
 
@@ -53,13 +57,13 @@ export default function Sidebar({
         <span className="text-foreground">Harkirat Singh&rsquo;s</span>{" "}
         channel in <Highlight>May 2023</Highlight> at{" "}
         <Highlight>60K subscribers</Highlight> and grew into running the
-        whole engine — scripts, teams, production and post. When Harkirat
+        whole engine: scripts, teams, production and post. When Harkirat
         launched <Highlight>100xSchool</Highlight>, I moved onsite to Noida
         and built its channel from{" "}
         <Highlight>zero to 50K+ subscribers in six months</Highlight>.
       </p>
 
-      <p className="mt-8 text-base font-semibold uppercase tracking-[0.15em] text-muted">
+      <p className="mt-8 text-sm font-semibold uppercase tracking-[0.15em] text-muted md:text-base">
         Recognition
       </p>
 
@@ -99,7 +103,7 @@ export default function Sidebar({
         </label>
       </div>
 
-      <p className="mt-8 text-base font-semibold uppercase tracking-[0.15em] text-muted">
+      <p className="mt-8 text-sm font-semibold uppercase tracking-[0.15em] text-muted md:text-base">
         Work
       </p>
 
@@ -122,9 +126,6 @@ export default function Sidebar({
               <ul className="space-y-2">
                 {items.map((project) => {
                   const isActive = project.id === selectedId;
-                  const tag = [project.duration, project.views]
-                    .filter(Boolean)
-                    .join(" · ");
                   return (
                     <li key={project.id}>
                       <button
@@ -138,9 +139,21 @@ export default function Sidebar({
                         <span className="min-w-0 flex-1 truncate">
                           {project.title}
                         </span>
-                        {tag && (
-                          <span className="shrink-0 text-sm text-muted no-underline">
-                            {tag}
+                        {(project.duration || project.views) && (
+                          <span className="shrink-0 text-sm no-underline">
+                            {project.duration && (
+                              <span className="text-muted">
+                                {project.duration}
+                              </span>
+                            )}
+                            {project.duration && project.views && (
+                              <span className="text-muted"> · </span>
+                            )}
+                            {project.views && (
+                              <span className="font-medium text-money">
+                                {project.views}
+                              </span>
+                            )}
                           </span>
                         )}
                       </button>
