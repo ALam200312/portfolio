@@ -11,6 +11,14 @@ type Props = {
   onSelect: (project: Project) => void;
 };
 
+function Highlight({ children }: { children: React.ReactNode }) {
+  return (
+    <strong className="font-semibold text-foreground underline decoration-accent decoration-2 underline-offset-2">
+      {children}
+    </strong>
+  );
+}
+
 export default function Sidebar({
   categories,
   projects,
@@ -38,14 +46,17 @@ export default function Sidebar({
       </p>
 
       <p className="mt-5 text-foreground/90">
-        I&rsquo;m a content strategist and media operator with 4+ years
-        scaling digital-first communities, most of it inside the Solana
-        ecosystem. I joined{" "}
+        I&rsquo;m a content strategist and media operator with{" "}
+        <Highlight>4+ years</Highlight> scaling digital-first communities,
+        most of it inside the <Highlight>Solana ecosystem</Highlight>. I
+        joined{" "}
         <span className="text-foreground">Harkirat Singh&rsquo;s</span>{" "}
-        channel in May 2023 at 60K subscribers and grew into running the
+        channel in <Highlight>May 2023</Highlight> at{" "}
+        <Highlight>60K subscribers</Highlight> and grew into running the
         whole engine — scripts, teams, production and post. When Harkirat
-        launched 100xSchool, I moved onsite to Noida and built its channel
-        from zero to 50K+ subscribers in six months.
+        launched <Highlight>100xSchool</Highlight>, I moved onsite to Noida
+        and built its channel from{" "}
+        <Highlight>zero to 50K+ subscribers in six months</Highlight>.
       </p>
 
       <p className="mt-8 text-base font-semibold uppercase tracking-[0.15em] text-muted">
@@ -58,11 +69,17 @@ export default function Sidebar({
           Harkirat Singh · 100xSchool · Superteam India · OnlyDevs
         </dd>
         <dt>Subscribers grown</dt>
-        <dd className="text-foreground/90">609K+ &amp; 50K+</dd>
+        <dd className="text-foreground/90">
+          <Highlight>609K+ &amp; 50K+</Highlight>
+        </dd>
         <dt>Monthly views</dt>
-        <dd className="text-foreground/90">1.3M+</dd>
+        <dd className="text-foreground/90">
+          <Highlight>1.3M+</Highlight>
+        </dd>
         <dt>Content shipped</dt>
-        <dd className="text-foreground/90">400+ pieces</dd>
+        <dd className="text-foreground/90">
+          <Highlight>400+ pieces</Highlight>
+        </dd>
         <dt>In the room at</dt>
         <dd className="text-foreground/90">
           DePIN Summit · Accelerate · APEX
@@ -118,7 +135,9 @@ export default function Sidebar({
                             : "text-foreground/90 hover:text-foreground"
                         }`}
                       >
-                        <span className="truncate">{project.title}</span>
+                        <span className="min-w-0 flex-1 truncate">
+                          {project.title}
+                        </span>
                         {tag && (
                           <span className="shrink-0 text-sm text-muted no-underline">
                             {tag}
