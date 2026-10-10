@@ -15,6 +15,7 @@ body {
 /* thin scrollbar for the project list */
 .thin-scrollbar::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 .thin-scrollbar::-webkit-scrollbar-track {
   background: transparent;

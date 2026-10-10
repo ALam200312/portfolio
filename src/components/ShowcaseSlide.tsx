@@ -1,0 +1,50 @@
+import { ShowcaseSectionData } from "@/lib/types";
+import VideoGrid from "./VideoGrid";
+
+export default function ShowcaseSlide({ data }: { data: ShowcaseSectionData }) {
+  return (
+    <div>
+      <p className="text-sm font-semibold uppercase tracking-[0.15em] text-muted">
+        {data.eyebrow}
+      </p>
+      <h2 className="mt-2 text-3xl font-bold text-foreground md:text-5xl">
+        {data.title}
+      </h2>
+      {data.role && (
+        <p className="mt-1 text-lg font-medium text-accent">{data.role}</p>
+      )}
+      <p className="mt-4 max-w-2xl text-lg leading-8 text-foreground/90">
+        {data.description}
+      </p>
+
+      {data.stats && data.stats.length > 0 && (
+        <ul className="mt-4 space-y-1">
+          {data.stats.map((stat) => (
+            <li key={stat} className="font-medium text-money">
+              {stat}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {data.link && (
+        <a
+          href={data.link.url}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-4 inline-block text-muted underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-accent"
+        >
+          {data.link.label}
+        </a>
+      )}
+
+      <div className="mt-8">
+        <VideoGrid
+          featured={data.featuredVideo}
+          videos={data.videos}
+          emptyStateNote={data.emptyStateNote}
+        />
+      </div>
+    </div>
+  );
+}
