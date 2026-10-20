@@ -14,8 +14,7 @@ const config: Config = {
         border: "#c2c2c2",
         muted: "#6b6b6b",
         foreground: "#111111",
-        accent: "#1a56db",
-        money: "#0f7a3d",
+        accent: "#7c3aed", // violet — brand highlight color used site-wide
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

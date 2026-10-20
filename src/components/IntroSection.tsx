@@ -1,10 +1,10 @@
 import { youtubeChannels } from "@/lib/content";
 
-const stats: { value: string; label: string }[] = [
+const stats: { value: string; label: string; underline?: boolean }[] = [
   { value: "4+", label: "Years in content & production" },
-  { value: "50M+", label: "Views generated across all channels" },
+  { value: "50M+", label: "Views generated across all channels", underline: true },
   { value: "718K+", label: "Subscribers grown, one channel, whole team" },
-  { value: "$100K+", label: "Brand campaigns managed" },
+  { value: "$100K+", label: "Brand campaigns managed", underline: true },
 ];
 
 function channelUrl(id: string) {
@@ -31,7 +31,7 @@ export default function IntroSection() {
           Content Strategist &amp; Team Contributor
         </p>
         <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-6xl">
-          I&apos;m part of the teams behind YouTube channels that grow.
+          Since <span className="text-accent">2023</span>, I have been part of the teams behind YouTube channels that grow.
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
           I started as a video editor in 2023, and channel growth has never
@@ -64,7 +64,15 @@ export default function IntroSection() {
           {stats.map((stat) => (
             <div key={stat.label}>
               <p className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-                {stat.value}
+                <span
+                  className={
+                    stat.underline
+                      ? "text-accent underline decoration-accent decoration-[3px] underline-offset-[6px]"
+                      : undefined
+                  }
+                >
+                  {stat.value}
+                </span>
               </p>
               <p className="mt-1 text-sm text-muted">{stat.label}</p>
             </div>

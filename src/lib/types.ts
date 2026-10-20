@@ -37,4 +37,23 @@ export type ShowcaseSectionData = {
   videos: ShowcaseVideo[];
   link?: ShowcaseLink;
   emptyStateNote?: string;
+  // Shows the video player slightly narrower than the full section width.
+  compactVideo?: boolean;
+};
+
+export type InstagramCaseStudyData = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  role: string;
+  timeline: string;
+  brief: string;
+  insight: string;
+  approach: string;
+  milestones: { when: string; title: string; text: string }[];
+  outcome: string;
+  handle: string;
+  instagramUrl: string;
+  followerGrowth: { label: string; followers: number; display: string }[];
+  revenue: { label: string; value: string }[];
 };

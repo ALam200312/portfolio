@@ -56,7 +56,7 @@ export default function YouTubeEmbed({ video, size = "small", autoPlay = false }
       </p>
       {(video.views || video.year) && (
         <p className="text-sm text-muted">
-          {video.views && <span className="font-medium text-money">{video.views}</span>}
+          {video.views && <span className="font-medium text-accent">{video.views}</span>}
           {video.views && video.year && <span> · </span>}
           {video.year && <span>{video.year}</span>}
         </p>

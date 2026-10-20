@@ -2,6 +2,7 @@ const links = [
   { href: "#youtube", label: "Channels" },
   { href: "#launch-videos", label: "Launch" },
   { href: "#podcast", label: "Podcast" },
+  { href: "#indo-german-express", label: "Instagram" },
   { href: "#brand-partnerships", label: "Brands" },
 ];
 

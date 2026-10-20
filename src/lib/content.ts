@@ -1,4 +1,4 @@
-import { ShowcaseSectionData, YoutubeChannel } from "./types";
+import { InstagramCaseStudyData, ShowcaseSectionData, YoutubeChannel } from "./types";
 
 // ---------------------------------------------------------------------------
 // YouTube channel case studies
@@ -241,6 +241,7 @@ export const launchVideosSection: ShowcaseSectionData = {
   role: "Launch Videos",
   description:
     "High-energy launch and motion-graphics videos for SaaS products and tools in the Solana and dev-tooling ecosystem — built to introduce a product and make people want to try it in under a minute.",
+  compactVideo: true,
   featuredVideo: { youtubeId: "Db5klNQZvOo", title: "Motia" },
   videos: [
     { youtubeId: "cNp2EVjxvmk", title: "Onlydevs" },
@@ -282,7 +283,7 @@ export const podcastSection: ShowcaseSectionData = {
 
 export const brandPartnershipSection: ShowcaseSectionData = {
   id: "brand-partnerships",
-  eyebrow: "05",
+  eyebrow: "06",
   title: "Brand Partnerships",
   role: "Brand–Creator Partnership Manager",
   description:
@@ -291,10 +292,59 @@ export const brandPartnershipSection: ShowcaseSectionData = {
   videos: [
     // PLACEHOLDER: add real YouTube video IDs from brand campaigns here.
   ],
-  link: {
-    label: "Indogerman Express on Instagram ↗",
-    url: "https://www.instagram.com/indogermanexpress/?hl=en",
-  },
-  emptyStateNote:
-    "Video showcase coming soon — example: grew Indogerman Express 0 → 80K Instagram followers in 6 months.",
+  emptyStateNote: "Video showcase coming soon.",
+};
+
+// ---------------------------------------------------------------------------
+// Indo-German Express — Instagram growth case study
+// ---------------------------------------------------------------------------
+// Wrap a phrase in **double asterisks** to highlight it in a milestone.
+
+export const indoGermanSection: InstagramCaseStudyData = {
+  id: "indo-german-express",
+  eyebrow: "05",
+  title: "Indo-German Express",
+  role: "Instagram Growth & Content Strategy",
+  timeline: "December 2023 — Present",
+  brief:
+    "In December 2023, Indo-German Express approached me with a simple requirement: they wanted to grow their Instagram page so they could run ads and establish credibility with potential customers.",
+  insight:
+    "Anyone can run ads from an Instagram page, regardless of how old or new it is. But when potential customers click on an ad and visit the profile, the content, engagement, and overall presence of the page influence whether they perceive the business as legitimate and trustworthy.",
+  approach:
+    "So, we started creating relatable and meme-driven content around the Indo-German audience.",
+  milestones: [
+    {
+      when: "Dec 2023",
+      title: "Kick-off",
+      text: "Started building the page from scratch, with content designed to make the profile look credible to anyone arriving from an ad.",
+    },
+    {
+      when: "6 months in",
+      title: "First traction",
+      text: "Grew the page to **30,000 followers**, while the business started generating approximately **$3,000–$4,000 in revenue from its courses**.",
+    },
+    {
+      when: "Next 3 years",
+      title: "Consistency",
+      text: "Continued publishing content consistently, building a community and strengthening the brand's presence.",
+    },
+    {
+      when: "Today",
+      title: "A real business",
+      text: "Grown to **80,000 Instagram followers**, generating approximately **$100,000–$150,000 in annual revenue**.",
+    },
+  ],
+  outcome:
+    "What started as a page intended to support paid advertising evolved into a long-term content engine that built an audience, established trust, and contributed to the growth of the business.",
+  handle: "indogermanexpress",
+  instagramUrl: "https://www.instagram.com/indogermanexpress/",
+  followerGrowth: [
+    { label: "Dec 2023", followers: 0, display: "0" },
+    { label: "6 months in", followers: 30000, display: "30K" },
+    { label: "Today", followers: 80000, display: "80K" },
+  ],
+  revenue: [
+    { label: "Course revenue at 6 months", value: "$3K–4K" },
+    { label: "Annual revenue today", value: "$100K–150K" },
+  ],
 };

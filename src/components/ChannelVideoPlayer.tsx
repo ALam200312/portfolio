@@ -109,7 +109,7 @@ export default function ChannelVideoPlayer({ videos, intro, children, footer }: 
             {(selected.views || selected.year) && (
               <p className="text-sm text-muted">
                 {selected.views && (
-                  <span className="font-medium text-money">{selected.views}</span>
+                  <span className="font-medium text-accent">{selected.views}</span>
                 )}
                 {selected.views && selected.year && <span> · </span>}
                 {selected.year && <span>{selected.year}</span>}

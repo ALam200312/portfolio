@@ -20,7 +20,7 @@ export default function ShowcaseSlide({ data }: { data: ShowcaseSectionData }) {
       {data.stats && data.stats.length > 0 && (
         <ul className="mt-4 space-y-1">
           {data.stats.map((stat) => (
-            <li key={stat} className="font-medium text-money">
+            <li key={stat} className="font-medium text-accent">
               {stat}
             </li>
           ))}
@@ -38,7 +38,7 @@ export default function ShowcaseSlide({ data }: { data: ShowcaseSectionData }) {
         </a>
       )}
 
-      <div className="mt-8">
+      <div className={`mt-8 ${data.compactVideo ? "max-w-5xl" : ""}`}>
         <VideoGrid
           featured={data.featuredVideo}
           videos={data.videos}

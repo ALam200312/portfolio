@@ -3,11 +3,13 @@ import IntroSection from "@/components/IntroSection";
 import YouTubeSection from "@/components/YouTubeSection";
 import ShowcaseCarousel from "@/components/ShowcaseCarousel";
 import ShowcaseSlide from "@/components/ShowcaseSlide";
+import InstagramCaseStudy from "@/components/InstagramCaseStudy";
 import {
   youtubeChannels,
   launchVideosSection,
   podcastSection,
   brandPartnershipSection,
+  indoGermanSection,
 } from "@/lib/content";
 
 export default function Home() {
@@ -24,6 +26,7 @@ export default function Home() {
             content: <ShowcaseSlide data={data} />,
           }))}
         />
+        <InstagramCaseStudy data={indoGermanSection} />
         <section
           id={brandPartnershipSection.id}
           className="scroll-mt-20 border-b border-border px-6 py-16 md:px-10 md:py-24"

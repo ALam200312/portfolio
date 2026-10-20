@@ -33,7 +33,7 @@ export default function ChannelCaseStudy({ channel }: Props) {
               </h3>
               <span
                 className={`text-sm font-medium uppercase tracking-[0.1em] ${
-                  channel.status === "current" ? "text-money" : "text-muted"
+                  channel.status === "current" ? "text-accent" : "text-muted"
                 }`}
               >
                 {channel.status === "current" ? "Currently working" : "Past project"}
@@ -73,7 +73,7 @@ export default function ChannelCaseStudy({ channel }: Props) {
             <ul className="mt-3 space-y-2">
               {channel.impact.map((item) => (
                 <li key={item} className="flex gap-2 text-foreground/90">
-                  <span className="text-money">—</span>
+                  <span className="text-accent">—</span>
                   <span>{item}</span>
                 </li>
               ))}
