@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type Slide = {
@@ -17,6 +17,17 @@ type Props = {
 export default function ShowcaseCarousel({ slides }: Props) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
+  const [height, setHeight] = useState<number>();
+
+  // Size the track to the visible slide so a shorter slide doesn't inherit
+  // the tallest slide's height (and leave a gap below it).
+  useEffect(() => {
+    const slide = trackRef.current?.children[active] as HTMLElement | undefined;
+    if (!slide) return;
+    const observer = new ResizeObserver(() => setHeight(slide.offsetHeight));
+    observer.observe(slide);
+    return () => observer.disconnect();
+  }, [active]);
 
   function goTo(index: number) {
     const track = trackRef.current;
@@ -82,7 +93,8 @@ export default function ShowcaseCarousel({ slides }: Props) {
         <div
           ref={trackRef}
           onScroll={handleScroll}
-          className="mt-10 flex snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          style={{ height }}
+          className="mt-10 flex items-start snap-x snap-mandatory overflow-x-auto overflow-y-hidden transition-[height] duration-300 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {slides.map((slide, i) => (
             <div
