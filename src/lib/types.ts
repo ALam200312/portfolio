@@ -37,6 +37,8 @@ export type ShowcaseSectionData = {
   videos: ShowcaseVideo[];
   link?: ShowcaseLink;
   emptyStateNote?: string;
+  // A single image of brand logos, shown under a "Brands I've worked with" label.
+  logos?: { src: string; alt: string; width: number; height: number };
   // Shows the video player slightly narrower than the full section width.
   compactVideo?: boolean;
 };

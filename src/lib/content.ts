@@ -289,10 +289,15 @@ export const brandPartnershipSection: ShowcaseSectionData = {
   description:
     "Manage brand-and-creator partnership campaigns end-to-end — matching brands with creators, scoping deliverables and overseeing execution. Handled campaigns worth $100K+ over the past year.",
   stats: ["$100K+ in campaigns managed in the last year"],
+  logos: {
+    src: "/brands/brand-logos.jpg",
+    alt: "Tiger Data, Google Cloud, Oracle, MongoDB, Trigger.dev, Crusoe, Clerk and Claude Code",
+    width: 1521,
+    height: 356,
+  },
   videos: [
-    // PLACEHOLDER: add real YouTube video IDs from brand campaigns here.
+    // Add YouTube video IDs from brand campaigns here to show a player.
   ],
-  emptyStateNote: "Video showcase coming soon.",
 };
 
 // ---------------------------------------------------------------------------
